@@ -12,7 +12,13 @@ const server = http.createServer(app);
 require("dotenv").config();
 require("colors");
 
-app.use(cors());
+app.use(cors(
+  {
+    origin: [],
+    methods: ["POST", "GET"],
+    credentials: true,
+  }
+));
 
 connectDB();
 
